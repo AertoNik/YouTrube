@@ -1,0 +1,64 @@
+{
+  "passed": 20,
+  "results": [
+    "Simulation remains finite for 10 publications",
+    "Audience and subscribers remain bounded for 10 publications",
+    "Subscription conservation for 10 publications",
+    "Bounded offline batch for 10 publications",
+    "Simulation remains finite for 100 publications",
+    "Audience and subscribers remain bounded for 100 publications",
+    "Subscription conservation for 100 publications",
+    "Bounded offline batch for 100 publications",
+    "Simulation remains finite for 500 publications",
+    "Audience and subscribers remain bounded for 500 publications",
+    "Subscription conservation for 500 publications",
+    "Bounded offline batch for 500 publications",
+    "Thirty-day offline batch remains bounded for 1000 publications",
+    "Offline journal remains bounded and finite for 1000 publications",
+    "Simulation remains finite for 1000 publications",
+    "Audience and subscribers remain bounded for 1000 publications",
+    "Subscription conservation for 1000 publications",
+    "Bounded offline batch for 1000 publications",
+    "Long-tail outcomes differ substantially on otherwise equivalent new channels",
+    "Most publications are not automatically viral"
+  ],
+  "benchmarks": [
+    {
+      "count": 10,
+      "oneDayMs": 173,
+      "packedMB": 0.14
+    },
+    {
+      "count": 100,
+      "oneDayMs": 727,
+      "packedMB": 0.86
+    },
+    {
+      "count": 500,
+      "oneDayMs": 2537,
+      "packedMB": 4.04
+    },
+    {
+      "count": 1000,
+      "oneDayMs": 5253,
+      "packedMB": 8.03
+    },
+    {
+      "count": 1000,
+      "offline30DaysMs": 11397,
+      "packedMB": 21.58
+    }
+  ],
+  "calibration": {
+    "minimum": 203,
+    "median": 2434,
+    "p90": 12926,
+    "maximum": 41962,
+    "over100k": 0,
+    "types": {
+      "normal": 82,
+      "viral": 4,
+      "failed": 14
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "passed": 15,
+  "results": [
+    "Small save commits inline",
+    "Small journal keeps the existing localStorage key",
+    "Large save waits for a committed IndexedDB transaction",
+    "Storage pointer refers to an existing snapshot",
+    "Snapshot loader restores the large state exactly",
+    "Failed IndexedDB write preserves the previous durable pointer",
+    "Failed pointer commit preserves the previous durable save",
+    "Retry commits after a storage failure",
+    "Snapshot cleanup retains at most two successful checkpoints",
+    "Missing snapshot produces an error without resetting existing data",
+    "Complete v3 telemetry passes backup validation",
+    "Incomplete or invalid v3 telemetry rejected before restore 1",
+    "Incomplete or invalid v3 telemetry rejected before restore 2",
+    "Incomplete or invalid v3 telemetry rejected before restore 3",
+    "Cooperative offline loading uses exactly the same simulation as synchronous updates"
+  ]
+}

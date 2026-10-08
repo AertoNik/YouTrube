@@ -1,0 +1,11 @@
+{
+  "passed": 6,
+  "results": [
+    "Failed backup commit retains current state and stored source",
+    "Failed commit keeps backup retryable and preserves image assets",
+    "Successful restore commits imported state durably",
+    "Asset cleanup occurs only after successful commit",
+    "Missing backup images rejected before image writes or state replacement",
+    "Unavailable IndexedDB retains inline legacy image data"
+  ]
+}
