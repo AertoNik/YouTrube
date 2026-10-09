@@ -1,0 +1,41 @@
+{
+  "environment": "isolated localhost:8766; synthetic test channel",
+  "checks": [
+    "Text post created through the browser UI and preserved after reload",
+    "Four-option poll created, closed, and preserved after reload",
+    "Image uploaded through file chooser, optimized, previewed, saved, and visible after reload",
+    "Post text edited without changing reach or original date",
+    "Disposable test post deleted through its confirmation dialog and absent after reload",
+    "NPC community poll accepts one vote; options remain disabled after reload",
+    "Optional content-facts field published through the real video editor and included in exported data",
+    "New publication starts at zero views with the real current local date",
+    "Virtual comments quote supplied movie events with no extra scene details",
+    "Comment like, owner heart, pin, and reply persist after reload",
+    "Comment sort selection persists after reload",
+    "Shorts use the same discussion and reply interface",
+    "Analytics period and video/Shorts controls update demographic totals",
+    "Heatmap click shows the selected weekday/hour view count",
+    "Mobile analytics at 375px has document width 375px and internal heatmap scrolling",
+    "Mobile community at 375px has document width 375px and three responsive cards",
+    "Poll percentages shown in browser sum to 100: 17 + 29 + 24 + 30",
+    "Notification target opens the actual corresponding video",
+    "Mark-all-read clears the unread badge",
+    "Verification application shows pending status after reload",
+    "Expired review fixture completes verification deterministically in browser",
+    "Confirmed channel and community cards expose accessible verification badges",
+    "Changing handle preserves verification",
+    "Changing channel name removes verification and offers reapplication",
+    "Image-inclusive backup restores the new posts and discussion data",
+    "Browser console has no captured errors or warnings in final checks"
+  ],
+  "passed": 26,
+  "reviewTiming": "Injected clock in automated tests; elapsed-review fixture imported through UI for browser test. No system clock changes.",
+  "primaryUserOrigin": "localhost:8765 was not opened or modified",
+  "screenshots": [
+    "youtrube-v4-community.jpg",
+    "youtrube-v4-analytics.jpg",
+    "youtrube-v4-mobile-community.jpg",
+    "youtrube-v4-mobile-analytics.jpg",
+    "youtrube-v4-comments.jpg"
+  ]
+}

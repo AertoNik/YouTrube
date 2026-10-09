@@ -1,0 +1,160 @@
+{
+  "passed": 92,
+  "suites": [
+    {
+      "suite": "engine",
+      "passed": 50,
+      "results": [
+        "A: zero-subscriber channel receives a test audience and conversions",
+        "B: active audience increases launch reach without guaranteed subscriber views",
+        "C: weak engagement limits recommendations",
+        "D: strong content expands gradually after test feedback",
+        "D: viral growth follows bounded exposure, without a million-view jump",
+        "Watch duration and hourly/daily history remain consistent",
+        "All ordinary traffic sources sum to views",
+        "CTR uses actual impression clicks instead of external views",
+        "Click evidence persisted in analytical history",
+        "CTR adapts when distribution reaches broader audience",
+        "F: inactivity moves viewers between existing audience groups",
+        "F: inactivity conserves people and subscriptions",
+        "F: successful new exposure can reactivate known viewers",
+        "E: rediscovery increases real exposure and matching traffic sources",
+        "E: organic retest mechanism can trigger a rare second wave",
+        "G: Shorts exposure splits into viewed and swiped outcomes",
+        "G: repeat views and traffic remain consistent",
+        "G: Shorts engine learns completion separately from thumbnail clicks",
+        "G: Shorts and ordinary videos follow different curves",
+        "Subscription status is distributed inside audience groups",
+        "Audience groups and subscription subsets stay nonnegative and bounded",
+        "Audience is created only by genuinely new viewers",
+        "Period unique estimate deduplicates returning audience and excludes repeats",
+        "Subscriber and non-subscriber view shares sum to views",
+        "Shorts acquisition does not guarantee active long-video audience",
+        "Multi-day unique viewers use union occupancy rather than summing day totals",
+        "H: pause stops offline simulation",
+        "H: saved timestamp prevents repeated offline credit",
+        "I: storage round trip preserves publication and channel statistics",
+        "Schema-three migration is idempotent",
+        "I: version-two migration preserves all existing statistics",
+        "I: image references preserved during migration",
+        "Audience history and cohort count remain bounded over years",
+        "Long running analytical history remains bounded and finite",
+        "F: measured return exposure transfers dormant to casual and casual to regular",
+        "Manual replay adds a repeat view, without creating another unique viewer",
+        "All-time graph includes the migration day even when tracking starts at midday",
+        "Format selection cannot accidentally submit the publication form",
+        "Manual subscription stays within available audience-group capacity",
+        "Manual unsubscribe conserves the channel and audience subscriber totals",
+        "Strong small-channel content can overtake weak large-channel content",
+        "Column-packed storage preserves every history metric losslessly",
+        "All five lifecycle families are reachable through seeded content parameters",
+        "Slow-burn publication discovers an audience after a weak first day",
+        "Long-term search and repeat exposure retain a nonzero tail",
+        "Category demand changes exposure without overriding content feedback",
+        "Format filter includes a viewer who discovers Shorts and later watches long video without duplicating channel uniques",
+        "Manual clicks are included in period CTR when sharing a bucket with simulated exposure",
+        "Leaving Shorts immediately resolves the exposure as a swipe",
+        "Repeated unload/route cleanup cannot credit a second swipe"
+      ]
+    },
+    {
+      "suite": "stress",
+      "passed": 21,
+      "results": [
+        "Simulation remains finite for 10 publications",
+        "Audience and subscribers remain bounded for 10 publications",
+        "Subscription conservation for 10 publications",
+        "Bounded offline batch for 10 publications",
+        "Simulation remains finite for 100 publications",
+        "Audience and subscribers remain bounded for 100 publications",
+        "Subscription conservation for 100 publications",
+        "Bounded offline batch for 100 publications",
+        "Simulation remains finite for 500 publications",
+        "Audience and subscribers remain bounded for 500 publications",
+        "Subscription conservation for 500 publications",
+        "Bounded offline batch for 500 publications",
+        "Thirty-day offline batch remains bounded for 1000 publications",
+        "Offline journal remains bounded and finite for 1000 publications",
+        "Month-old large state remains valid for complete backup restoration",
+        "Simulation remains finite for 1000 publications",
+        "Audience and subscribers remain bounded for 1000 publications",
+        "Subscription conservation for 1000 publications",
+        "Bounded offline batch for 1000 publications",
+        "Long-tail outcomes differ substantially on otherwise equivalent new channels",
+        "Most publications are not automatically viral"
+      ],
+      "benchmarks": [
+        {
+          "count": 10,
+          "oneDayMs": 73,
+          "packedMB": 0.19
+        },
+        {
+          "count": 100,
+          "oneDayMs": 318,
+          "packedMB": 0.9
+        },
+        {
+          "count": 500,
+          "oneDayMs": 1249,
+          "packedMB": 4.06
+        },
+        {
+          "count": 1000,
+          "oneDayMs": 2083,
+          "packedMB": 7.99
+        },
+        {
+          "count": 1000,
+          "offline30DaysMs": 27893,
+          "packedMB": 27.31
+        }
+      ],
+      "calibration": {
+        "minimum": 187,
+        "median": 2381,
+        "p90": 12525,
+        "maximum": 40407,
+        "over100k": 0,
+        "types": {
+          "normal": 82,
+          "viral": 4,
+          "failed": 14
+        }
+      }
+    },
+    {
+      "suite": "storage",
+      "passed": 15,
+      "results": [
+        "Small save commits inline",
+        "Small journal keeps the existing localStorage key",
+        "Large save waits for a committed IndexedDB transaction",
+        "Storage pointer refers to an existing snapshot",
+        "Snapshot loader restores the large state exactly",
+        "Failed IndexedDB write preserves the previous durable pointer",
+        "Failed pointer commit preserves the previous durable save",
+        "Retry commits after a storage failure",
+        "Snapshot cleanup retains at most two successful checkpoints",
+        "Missing snapshot produces an error without resetting existing data",
+        "Complete v3 telemetry passes backup validation",
+        "Incomplete or invalid v3 telemetry rejected before restore 1",
+        "Incomplete or invalid v3 telemetry rejected before restore 2",
+        "Incomplete or invalid v3 telemetry rejected before restore 3",
+        "Cooperative offline loading uses exactly the same simulation as synchronous updates"
+      ]
+    },
+    {
+      "suite": "restore",
+      "passed": 6,
+      "results": [
+        "Failed backup commit retains current state and stored source",
+        "Failed commit keeps backup retryable and preserves image assets",
+        "Successful restore commits imported state durably",
+        "Asset cleanup occurs only after successful commit",
+        "Missing backup images rejected before image writes or state replacement",
+        "Unavailable IndexedDB retains inline legacy image data"
+      ]
+    }
+  ]
+}

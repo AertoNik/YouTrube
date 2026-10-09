@@ -1,0 +1,13 @@
+{
+  "passed": 8,
+  "results": [
+    "Inline community image migrates into existing IndexedDB abstraction",
+    "Garbage collection retains post images",
+    "Garbage collection removes only unreferenced assets",
+    "Export includes post image bytes and their metadata reference",
+    "Missing post image is rejected before writes or state replacement",
+    "Restore remaps community references and restores image bytes",
+    "Successful image restoration commits the pending snapshot",
+    "Failed persistence retains active community data and keeps retry available"
+  ]
+}

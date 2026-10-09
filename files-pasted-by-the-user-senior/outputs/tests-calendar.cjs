@@ -2,8 +2,8 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path'),{performance}=require('node:perf_hooks');
 const html=fs.readFileSync(path.join(__dirname,'index.html'),'utf8'),script=html.match(/<script>([\s\S]*?)<\/script>/)[1];new vm.Script(script);
 const source=script.slice(0,script.indexOf('// APP INIT'));
-const stub=()=>({innerHTML:'',textContent:'',dataset:{},querySelector:()=>stub(),querySelectorAll:()=>[],classList:{add(){},remove(){},toggle(){}},remove(){},focus(){}});
-const document={addEventListener(){},querySelector:()=>stub(),querySelectorAll:()=>[],body:stub()};
+const stub=()=>({innerHTML:'',textContent:'',dataset:{},setAttribute(){},append(){},querySelector:()=>stub(),querySelectorAll:()=>[],classList:{add(){},remove(){},toggle(){}},remove(){},focus(){}});
+const document={createElement:()=>stub(),addEventListener(){},querySelector:()=>stub(),querySelectorAll:()=>[],body:stub()};
 const storage={data:null,getItem(){return this.data},setItem(k,v){this.data=v}};
 const context=vm.createContext({document,window:{addEventListener(){},scrollTo(){}},location:{hash:'#/studio/content'},localStorage:storage,Date,performance,console,setInterval(){},setTimeout(fn){queueMicrotask(fn);return 1},clearTimeout(){},requestAnimationFrame(){},matchMedia(){return{matches:false}},crypto:require('node:crypto').webcrypto,URLSearchParams,Map,Set,FormData:class{constructor(form){this.data=form}get(k){return this.data[k]??''}}});
 vm.runInContext(source+`
