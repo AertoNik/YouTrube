@@ -27,5 +27,7 @@ replace('...(imported.community?.posts||[]).map(p=>p.image)]','...(imported.comm
 replace('  state=migrateState(imported);seedShortEcosystem();',"  for(const p of imported.playlists||[]){if(replacements.has(p.cover))p.cover=replacements.get(p.cover);else if(p.cover?.startsWith('data:'))p.cover=await ImageStore.put(p.cover,uid('restored'));}\n  state=migrateState(imported);seedShortEcosystem();")
 replace('await settleBootTime();socialMaintenance();','await settleBootTime();socialMaintenance();earnMaintenance();')
 replace("initializeSocialVideo(v);state.videos.push(v);", "initializeSocialVideo(v);initializeEarningVideo(v);state.videos.push(v);")
+from apply_v51 import upgrade
+html=upgrade(html)
 (p.parent/'outputs/index.html').write_text(html)
-print('Built YouTrube 5.0:',len(html.encode()),'bytes')
+print('Built YouTrube 5.1:',len(html.encode()),'bytes')

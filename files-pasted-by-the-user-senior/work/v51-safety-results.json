@@ -1,0 +1,103 @@
+{
+  "passed": 40,
+  "results": [
+    "Normal v5 backup remains valid",
+    "Import rejects notification attribute injection",
+    "Import rejects comment attribute injection",
+    "Import rejects notification route injection",
+    "Import rejects invalid notifications container",
+    "Import rejects duplicate notification IDs",
+    "Import rejects reserved video ID",
+    "Import rejects invalid channel seed",
+    "Import rejects unknown channel category",
+    "Legacy missing IDs receive safe generated identifiers",
+    "Rendering escapes IDs even if old local data bypassed import validation",
+    "Comment and notification text remains escaped",
+    "Boot rejects unsafe old inline data while retaining the original save",
+    "Active tab can commit",
+    "Second tab waits without acquiring writer ownership",
+    "Waiting tab cannot overwrite the active tab",
+    "After owner closes the waiting tab loads the latest playlist",
+    "New owner preserves earlier changes when saving its own",
+    "External old-version write stops stale saves instead of overwriting newer data",
+    "Closing a waiting tab cancels its pending acquisition",
+    "A cancelled waiter does not block the following tab",
+    "IndexedDB ownership is used without Web Locks",
+    "Fallback commits small state through the atomic ownership transaction",
+    "A throttled owner safely renews an expired lease if nobody replaced it",
+    "Close notification leaves the durable save unchanged",
+    "Close notification allows a successor before the lease timeout",
+    "A replaced lease refuses an obsolete writer before its storage callback runs",
+    "Fallback successor restores the existing channel",
+    "Closing the fallback owner releases its lease",
+    "Initial durable checkpoint exists before a large write",
+    "Large state starts a durable snapshot transaction",
+    "A queued snapshot cannot commit after ownership is lost",
+    "Daily views stay within 5% across update cadences: short/0",
+    "Daily subscriber growth stays within 2.5% across update cadences: short/0",
+    "Daily views stay within 5% across update cadences: short/1",
+    "Daily subscriber growth stays within 2.5% across update cadences: short/1",
+    "Daily views stay within 5% across update cadences: short/4",
+    "Daily subscriber growth stays within 2.5% across update cadences: short/4",
+    "Daily views stay within 5% across update cadences: video/0",
+    "Daily subscriber growth stays within 2.5% across update cadences: video/0"
+  ],
+  "cadence": [
+    {
+      "type": "short",
+      "serial": 0,
+      "online": {
+        "views": 7435.661799359391,
+        "subscribers": 5.716114859491157
+      },
+      "offline": {
+        "views": 7409.134336832524,
+        "subscribers": 5.686739664035251
+      },
+      "viewsDifference": 0.0035675993936615156,
+      "subscriberDifference": 0.005139014204224819
+    },
+    {
+      "type": "short",
+      "serial": 1,
+      "online": {
+        "views": 7580.428530869831,
+        "subscribers": 6.071586894783428
+      },
+      "offline": {
+        "views": 7553.881882768041,
+        "subscribers": 6.042924927783314
+      },
+      "viewsDifference": 0.0035019983360682185,
+      "subscriberDifference": 0.004720671464776217
+    },
+    {
+      "type": "short",
+      "serial": 4,
+      "online": {
+        "views": 11681.522085341796,
+        "subscribers": 9.374046686608935
+      },
+      "offline": {
+        "views": 11655.306078219128,
+        "subscribers": 9.354257652040987
+      },
+      "viewsDifference": 0.0022442286999195464,
+      "subscriberDifference": 0.002111045019246281
+    },
+    {
+      "type": "video",
+      "serial": 0,
+      "online": {
+        "views": 312.886200935949,
+        "subscribers": 0.46932072224914195
+      },
+      "offline": {
+        "views": 314.0016337318713,
+        "subscribers": 0.4751310858040755
+      },
+      "viewsDifference": 0.003552315262393898,
+      "subscriberDifference": 0.012228969496071834
+    }
+  ]
+}

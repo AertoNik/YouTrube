@@ -1,0 +1,32 @@
+[
+  {
+    "suite": "tests-v5.cjs",
+    "timeZone": "Europe/Moscow",
+    "passed": 108
+  },
+  {
+    "suite": "tests-v5-assets.cjs",
+    "timeZone": "Europe/Moscow",
+    "passed": 12
+  },
+  {
+    "suite": "tests-v4.cjs",
+    "timeZone": "Europe/Moscow",
+    "passed": 89
+  },
+  {
+    "suite": "tests-calendar.cjs",
+    "timeZone": "Europe/Moscow",
+    "passed": 39
+  },
+  {
+    "suite": "tests-calendar.cjs",
+    "timeZone": "America/New_York",
+    "passed": 43
+  },
+  {
+    "suite": "tests-calendar.cjs",
+    "timeZone": "Asia/Kathmandu",
+    "passed": 40
+  }
+]
