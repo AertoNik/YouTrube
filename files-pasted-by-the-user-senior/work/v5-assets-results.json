@@ -1,0 +1,17 @@
+{
+  "passed": 12,
+  "results": [
+    "Playlist cover migrates through existing image store",
+    "Inline community image migrates into existing IndexedDB abstraction",
+    "Collection retains custom playlist covers",
+    "Garbage collection retains post images",
+    "Garbage collection removes only unreferenced assets",
+    "Export packages playlist cover bytes",
+    "Export includes post image bytes and their metadata reference",
+    "Missing post image is rejected before writes or state replacement",
+    "Restore remaps playlist covers atomically",
+    "Restore remaps community references and restores image bytes",
+    "Successful image restoration commits the pending snapshot",
+    "Failed persistence retains active community data and keeps retry available"
+  ]
+}
